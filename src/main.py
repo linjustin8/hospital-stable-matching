@@ -1,14 +1,14 @@
 # main.py
 import sys
 from pathlib import Path
-from match import match
-# from src.verify import Verify
+from match import Match
+from verify import Verify
 
 
 def main():
     # initialize matcher and verifier
-    # matcher = None
-    # verifier = None
+    matcher = None
+    verifier = None
     n = 0
     hospital_prefs = []
     student_prefs = []
@@ -46,7 +46,13 @@ def main():
             prefs = list(map(int, input().split()))
             student_prefs.append(prefs)
 
-    matches = match(n, hospital_prefs, student_prefs)
+
+    matcher = Match(n, hospital_prefs, student_prefs)
+    matches = matcher.stable_matching()
+
+    verifier = Verify(matcher)
+    verifier.verify()
+    
 
     # print results
     print(str(len(matches)) + " matches made: ")
@@ -64,9 +70,6 @@ def main():
 
 
     # create matcher and verifier
-    # matcher = Match(n, hospital_prefs, student_prefs)
-
-    # verifier = Verify(matcher)
 
     # # verify the matching
     # is_stable = verifier.verify()

@@ -31,7 +31,7 @@ If no file path is given, you can enter the data line by line.
 ## Assumptions
 - n != 0
 - preferences for hospitals **`i`**: **`1 <= i <= n`**
-- preferences for students **`j`**: **`1 <= i <= n`**
+- preferences for students **`j`**: **`1 <= j <= n`**
 
 
 ## Graph + Solution to Task C

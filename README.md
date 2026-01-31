@@ -1,6 +1,6 @@
 # COP4533 Programming Assignment 1: Matching and Verifying
 
-## Justin Lin [ufid] and Yi Su [31833267]
+## Justin Lin [36425312] and Yi Su [31833267]
 An implementation of the Gale-Shapley Stable Matching Algorithm for assigning `n` hospitals to `n` students based on preference lists.
 
 ## Input

@@ -79,8 +79,8 @@ def main():
 
     # if file was given write to output file
     if len(sys.argv) > 1:
-        new_file = sys.argv[1].split("/")[-1].split(".")[0]
-        out_path = Path("../tests_out/" + new_file + ".out")
+        new_file = Path(sys.argv[1]).stem
+        out_path = Path("./tests_out/" + new_file + ".out")
         
         with open(out_path, 'w') as file:
             for pair in matches:

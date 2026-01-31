@@ -41,11 +41,11 @@ class Match:
             student = curr_prefs[student_idx]
             next_proposal_idx[hospital] += 1
             
-            if student + 1 not in self.matches: # a is free
-                self.matches[student + 1] = hospital + 1
-            elif self.student_rankings[student][hospital] < self.student_rankings[student][self.matches[student + 1]]: # a prefers h to her/his current assignment h'
-                curr_hospital = self.matches[student + 1]
-                self.matches[student + 1] = hospital
+            if student not in self.matches: # a is free
+                self.matches[student] = hospital
+            elif self.student_rankings[student][hospital] < self.student_rankings[student][self.matches[student]]: # a prefers h to her/his current assignment h'
+                curr_hospital = self.matches[student]
+                self.matches[student] = hospital
                 free_hospitals.add(curr_hospital)
             else:
                 free_hospitals.add(hospital)

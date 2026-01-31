@@ -16,26 +16,26 @@ class Verify:
             print("hospital and student count mismatched")
             return False
 
-        if sorted(hospitals) != list(range(1, self.n + 1)) or sorted(students) != list(range(1, self.n + 1)):
-            print("participant IDs should be 1 to n")
+        if sorted(hospitals) != list(range(self.n)) or sorted(students) != list(range(self.n)):
+            print("participant IDs should be 0 to n-1")
             return False
 
         student_to_hospital = {s: h for h, s in self.matching}
         hospital_to_student = {h: s for h, s in self.matching}
 
-        for h in range(1, self.n + 1):
-            for s in range(1, self.n + 1):
+        for h in range(self.n):
+            for s in range(self.n):
                 current_s = hospital_to_student[h]
                 current_h = student_to_hospital[s]
 
                 if current_s == s:
                     continue
 
-                h_pref = self.hospital_prefs[h - 1]
-                s_pref = self.student_prefs[s - 1]
+                h_pref = self.hospital_prefs[h]
+                s_pref = self.student_prefs[s]
 
-                prefers_s = h_pref.index(s - 1) < h_pref.index(current_s - 1)
-                prefers_h = s_pref.index(h - 1) < s_pref.index(current_h - 1)
+                prefers_s = h_pref.index(s) < h_pref.index(current_s)
+                prefers_h = s_pref.index(h) < s_pref.index(current_h)
 
                 if prefers_s and prefers_h:
                     print("Unstable Pair:", h, "and", s)

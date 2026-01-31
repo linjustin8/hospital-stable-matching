@@ -57,7 +57,7 @@ def main():
     # print results
     print(str(len(matches)) + " matches made: ")
     for pair in matches:
-        print(str(pair[0]) + ' ' + str(pair[1]))
+        print(str(pair[0] + 1) + ' ' + str(pair[1] + 1)) # convert back to 1-indexed
 
 
     # if file was given write to output file

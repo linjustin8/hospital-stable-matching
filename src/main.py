@@ -1,5 +1,6 @@
 # main.py
 import sys
+from pathlib import Path
 from match import match
 # from src.verify import Verify
 
@@ -17,12 +18,12 @@ def main():
 
         with open(sys.argv[1], 'r') as file:
             # input number of hospitals & students (n)
-            n = int(file.readline)
+            n = int(file.readline())
 
             # hospital preferences
             for i in range(n):
                 prefs = list(map(int, file.readline().split()))
-                student_prefs.append(prefs)
+                hospital_prefs.append(prefs)
 
             # student preferences
             for i in range(n):
@@ -45,8 +46,20 @@ def main():
             prefs = list(map(int, input().split()))
             student_prefs.append(prefs)
 
-    for match1 in match(n, hospital_prefs, student_prefs):
-        print(match1)
+    matches = match(n, hospital_prefs, student_prefs)
+
+    # print results
+    for pair in matches:
+        print(str(pair[0]) + ' ' + str(pair[1]))
+
+
+    # if file was given write to output file
+    if len(sys.argv) > 1:
+        with open(Path(sys.argv[1]).with_suffix(".out"), 'w') as file:
+            for pair in matches:
+                file.write(str(pair[0]) + ' ' + str(pair[1]) + '\n')
+        print("Output successfully written to: " + Path(sys.argv[1]).stem + ".out")
+
 
     # create matcher and verifier
     # matcher = Match(n, hospital_prefs, student_prefs)

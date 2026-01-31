@@ -28,8 +28,17 @@ The output matchings are written to `examples1.out` in the same directory.
 
 If no file path is given, you can enter the data line by line.
 
+## Assumptions
+- n != 0
+- preferences for hospitals **`i`**: **`1 <= i <= n`**
+- preferences for students **`j`**: **`1 <= i <= n`**
 
-## Functions
+
+## Graph + Solution to Task C
+
+
+
+## Functions + Extra Info
 ### `match(n, hospital_preference_lists, student_preference_lists)`
 
 #### Input

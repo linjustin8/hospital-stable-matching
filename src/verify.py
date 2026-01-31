@@ -17,7 +17,7 @@ class Verify:
             return False
 
         if sorted(hospitals) != list(range(self.n)) or sorted(students) != list(range(self.n)):
-            print("participant IDs should be 0 to n-1")
+            print("participant IDs should be 1 to n")
             return False
 
         student_to_hospital = {s: h for h, s in self.matching}

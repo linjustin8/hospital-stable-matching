@@ -2,7 +2,6 @@
 from collections import defaultdict
 
 class Match:
-    
     def __init__(self, n: int, hospital_prefs: list[list[int]], student_prefs: list[list[int]]):
         self.n = n
         self.hospital_prefs = {} # {hospital1: [student1 rank, student2 rank, ...]}

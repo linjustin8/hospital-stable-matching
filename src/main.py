@@ -22,12 +22,12 @@ def main():
 
             # hospital preferences
             for i in range(n):
-                prefs = list(map(int, file.readline().split()))
+                prefs = list(map(lambda x: int(x) - 1, file.readline().split())) # convert to 0-indexed
                 hospital_prefs.append(prefs)
 
             # student preferences
             for i in range(n):
-                prefs = list(map(int, file.readline().split()))
+                prefs = list(map(lambda x: int(x) - 1, file.readline().split())) # convert to 0-indexed
                 student_prefs.append(prefs)
 
     else:
@@ -38,12 +38,12 @@ def main():
         
         # hospital preferences
         for i in range(n):
-            prefs = list(map(int, input().split()))
+            prefs = list(map(lambda x: int(x) - 1, input().split())) # convert to 0-indexed
             hospital_prefs.append(prefs)
 
         # student preferences
         for i in range(n):
-            prefs = list(map(int, input().split()))
+            prefs = list(map(lambda x: int(x) - 1, input().split())) # convert to 0-indexed
             student_prefs.append(prefs)
 
 
@@ -65,7 +65,7 @@ def main():
         out_path = Path(sys.argv[1]).with_suffix(".out")
         with open(out_path, 'w') as file:
             for pair in matches:
-                file.write(str(pair[0]) + ' ' + str(pair[1]) + '\n')
+                file.write(str(pair[0] + 1) + ' ' + str(pair[1] + 1) + '\n') # convert back to 1-indexed
         print("Output successfully written to: " + str(out_path))
 
 

@@ -7,7 +7,7 @@ from verify import Verify
 '''
 Usage:
     python3 src/main.py [input_file]
-    (e.g. [python3 src/main.py ../tests_in/example1.in])
+    (e.g. [python3 src/main.py ./tests_in/example1.in])
 
 If no input_file is provided, the program will read from standard input.
 

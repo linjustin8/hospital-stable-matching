@@ -1,5 +1,5 @@
 # match.py
-
+import copy
 # class Match:
     
 #     def __init__(self, n: int, hospital_prefs: list[int], student_prefs: list[int]):
@@ -20,6 +20,7 @@
 
 
 def match(n: int, hospital_prefs: list[int], student_prefs: list[int]):
+    hospital_prefs = [pref[:] for pref in hospital_prefs]
     # hospital_prefs: [[1, 2, 3], ...]
     # student_prefs: [[2, 1, 3], ...]
 
@@ -62,10 +63,10 @@ def match(n: int, hospital_prefs: list[int], student_prefs: list[int]):
                     free_hospitals.add(h)
                     break
 
-    return [(hospital, student) for student, hospital in student_matches.items()]
+    return [(hospital, student) for student, hospital in student_matches.items()] # [(hospital, student), ...]
 
 # print("hi")
-# hospital_prefs = [[1, 3, 2], [2, 3, 1], [2, 1, 3]]
-# student_prefs = [[2, 1, 3], [1, 2, 3], [3, 1, 2]]
+# hospital_prefs = [[2, 1, 3], [2, 3, 1], [2, 1, 3]]
+# student_prefs  = [[2, 1, 3], [1, 2, 3], [1, 2, 3]]
 # for match in match(3, hospital_prefs, student_prefs):
 #     print(match)

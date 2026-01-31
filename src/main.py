@@ -49,16 +49,18 @@ def main():
     matches = match(n, hospital_prefs, student_prefs)
 
     # print results
+    print(str(len(matches)) + " matches made: ")
     for pair in matches:
         print(str(pair[0]) + ' ' + str(pair[1]))
 
 
     # if file was given write to output file
     if len(sys.argv) > 1:
-        with open(Path(sys.argv[1]).with_suffix(".out"), 'w') as file:
+        out_path = Path(sys.argv[1]).with_suffix(".out")
+        with open(out_path, 'w') as file:
             for pair in matches:
                 file.write(str(pair[0]) + ' ' + str(pair[1]) + '\n')
-        print("Output successfully written to: " + Path(sys.argv[1]).stem + ".out")
+        print("Output successfully written to: " + str(out_path))
 
 
     # create matcher and verifier

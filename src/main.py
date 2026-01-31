@@ -6,6 +6,12 @@ from verify import Verify
 
 
 def main():
+    # remove old output files
+    out_dir = Path("../tests_out/")
+    for file in out_dir.glob("*.out"):
+        file.unlink()
+
+    
     # initialize matcher and verifier
     matcher = None
     verifier = None
@@ -62,7 +68,9 @@ def main():
 
     # if file was given write to output file
     if len(sys.argv) > 1:
-        out_path = Path(sys.argv[1]).with_suffix(".out")
+        new_file = sys.argv[1].split("/")[-1].split(".")[0]
+        out_path = Path("../tests_out/" + new_file + ".out")
+        
         with open(out_path, 'w') as file:
             for pair in matches:
                 file.write(str(pair[0] + 1) + ' ' + str(pair[1] + 1) + '\n') # convert back to 1-indexed

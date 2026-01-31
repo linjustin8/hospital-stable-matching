@@ -41,6 +41,7 @@ If no file path is given, you can enter the data line by line.
 
 
 **`What is the trend that you notice?`**
+
 We found that as the number of data points(n) increased, the matcher's runtime increased at a quadratic rate, exhibiting a time complexity of O(n^2). The same was true with the verifier as our algorithm for it also ran at a time complexity of O(n^2). 
 
 

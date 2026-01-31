@@ -35,6 +35,13 @@ If no file path is given, you can enter the data line by line.
 
 
 ## Graph + Solution to Task C
+<img width="598" height="362" alt="image" src="https://github.com/user-attachments/assets/abff1ce0-6b06-49a1-abdf-04969df0418e" />
+
+<img width="598" height="356" alt="image" src="https://github.com/user-attachments/assets/7117ce74-4b30-4a0e-a7fc-b3eac17ca5f5" />
+
+
+**`What is the trend that you notice?`**
+We found that as the number of data points(n) increased, the matcher's runtime increased at a quadratic rate, exhibiting a time complexity of O(n^2). The same was true with the verifier as our algorithm for it also ran at a time complexity of O(n^2). 
 
 
 
